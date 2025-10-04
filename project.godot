@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Grimory"
-run/main_scene="uid://ctfm5e8mxgtg"
+run/main_scene="uid://dlvps7as83ptv"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,11 +19,10 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=2304
 window/size/viewport_height=1296
-window/size/window_width_override=1152
-window/size/window_height_override=648
 window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
