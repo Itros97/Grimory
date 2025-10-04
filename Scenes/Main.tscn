@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://dlvps7as83ptv"]
+[gd_scene load_steps=6 format=4 uid="uid://dlvps7as83ptv"]
 
 [ext_resource type="Texture2D" uid="uid://dms3svhja1icf" path="res://Assets/Tilesets/towerDefense_tilesheet.png" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://c6i3rjqjis2p3" path="res://Scripts/spawner.gd" id="2_idj7w"]
+[ext_resource type="PackedScene" uid="uid://c6u53mkhjty25" path="res://Turrets/turretA.tscn" id="3_kln2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eknbn"]
 texture = ExtResource("1_idj7w")
@@ -4450,5 +4451,10 @@ script = ExtResource("2_idj7w")
 
 [node name="Timer" type="Timer" parent="Spawner"]
 autostart = true
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="TurretA" parent="." instance=ExtResource("3_kln2b")]
+position = Vector2(672, 294)
 
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6u53mkhjty25"]
+
+[ext_resource type="Texture2D" uid="uid://bklvhfc2lrpu6" path="res://Assets/PNGs/towerDefense_tile250.png" id="1_7ftcw"]
+[ext_resource type="Script" uid="uid://cimmd6lk7ww5a" path="res://Scripts/turretA.gd" id="1_vc3kq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vc3kq"]
+size = Vector2(83, 65)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkmta"]
+radius = 642.0195
+
+[node name="TurretA" type="StaticBody2D"]
+script = ExtResource("1_vc3kq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_vc3kq")
+
+[node name="Barrel" type="Marker2D" parent="."]
+position = Vector2(66, -42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_7ftcw")
+
+[node name="range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="range"]
+shape = SubResource("CircleShape2D_rkmta")
+
+[node name="BulletCanon" type="Node" parent="."]
+
+[connection signal="body_entered" from="range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="range" to="." method="_on_range_body_exited"]
