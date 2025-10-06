@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 var target: Node2D = null           
-var speed: float = 1000.0
+var speed: float = 1000
 var path: String = ""               
-var bulletDamage
+var bulletDamage = 10
 
 func _physics_process(delta: float) -> void:
 	var spawner := get_tree().get_root().get_node("Main/Spawner")
@@ -30,5 +30,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name.contains("Soldier"):
+	if body.name.to_lower().contains("soldier"):
+		body.apply_damage(bulletDamage)
+		print("Daño aplicado vida restante:", body.health)
 		queue_free()
