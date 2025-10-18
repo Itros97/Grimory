@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var coins = 0
 var health = 20
 
 func apply_damage(amount: int) -> void:

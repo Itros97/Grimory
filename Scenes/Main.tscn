@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://dlvps7as83ptv"]
+[gd_scene load_steps=8 format=4 uid="uid://dlvps7as83ptv"]
 
 [ext_resource type="Texture2D" uid="uid://dms3svhja1icf" path="res://Assets/Tilesets/towerDefense_tilesheet.png" id="1_idj7w"]
+[ext_resource type="Script" uid="uid://byfmwisrop4ck" path="res://Scripts/main.gd" id="1_pbw6q"]
 [ext_resource type="Script" uid="uid://c6i3rjqjis2p3" path="res://Scripts/spawner.gd" id="2_idj7w"]
 [ext_resource type="PackedScene" uid="uid://c6u53mkhjty25" path="res://Turrets/turretA.tscn" id="3_kln2b"]
 [ext_resource type="PackedScene" uid="uid://n6wesq0ts7v1" path="res://Player/Player.tscn" id="4_rgh2o"]
@@ -4435,6 +4436,7 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_eknbn")
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_pbw6q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1146, 652)

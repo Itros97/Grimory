@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://n6wesq0ts7v1"]
 
-[ext_resource type="Script" uid="uid://b683rq0672hwt" path="res://Player/player.gd" id="1_q3lat"]
+[ext_resource type="Script" uid="uid://b683rq0672hwt" path="res://Scripts/player.gd" id="1_q3lat"]
 [ext_resource type="Texture2D" uid="uid://4kmroojenyaq" path="res://Assets/PNGs/towerDefense_tile245.png" id="2_0hhbw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_00okg"]
