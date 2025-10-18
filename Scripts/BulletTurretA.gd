@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name.to_lower().contains("soldier"):
+	if body.is_in_group("enemies"):
 		body.apply_damage(bulletDamage)
 		print("Daño aplicado vida restante:", body.health)
 		queue_free()

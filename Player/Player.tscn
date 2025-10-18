@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1esbrh8xsreg"]
+
+[ext_resource type="Texture2D" uid="uid://d14yhs6r7u0s2" path="res://Assets/PNGs/towerDefense_tile226.png" id="1_3qydi"]
+[ext_resource type="Script" uid="uid://bgp8mmc321uak" path="res://player.gd" id="1_q3lat"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d23ky"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
+size = Vector2(60, 61)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_q3lat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d23ky")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3qydi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_q3lat")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
