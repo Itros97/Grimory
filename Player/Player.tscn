@@ -1,27 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1esbrh8xsreg"]
+[gd_scene load_steps=5 format=3 uid="uid://n6wesq0ts7v1"]
 
-[ext_resource type="Texture2D" uid="uid://d14yhs6r7u0s2" path="res://Assets/PNGs/towerDefense_tile226.png" id="1_3qydi"]
-[ext_resource type="Script" uid="uid://bgp8mmc321uak" path="res://player.gd" id="1_q3lat"]
+[ext_resource type="Script" uid="uid://b683rq0672hwt" path="res://Player/player.gd" id="1_q3lat"]
+[ext_resource type="Texture2D" uid="uid://4kmroojenyaq" path="res://Assets/PNGs/towerDefense_tile245.png" id="2_0hhbw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d23ky"]
-size = Vector2(34, 34)
+[sub_resource type="CircleShape2D" id="CircleShape2D_00okg"]
+radius = 15.391195
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3lat"]
-size = Vector2(60, 61)
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3lat"]
+radius = 54.004112
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_q3lat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_d23ky")
+shape = SubResource("CircleShape2D_00okg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3qydi")
+[node name="TowerDefenseTile245" type="Sprite2D" parent="."]
+texture = ExtResource("2_0hhbw")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 0)
-shape = SubResource("RectangleShape2D_q3lat")
+shape = SubResource("CircleShape2D_q3lat")
+debug_color = Color(0.41448697, 0.47061855, 0.98258716, 0.41960785)
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
